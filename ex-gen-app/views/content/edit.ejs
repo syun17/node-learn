@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 class="display-4"><%= title %></h1>
+    </header>
+    <div role="main">
+        <p>id<%= content.id %>の編集</p>
+        <form action="/content/edit/" method="post">
+            <div class="form-group">
+                <label for="name">名前</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= content.name %>">
+            </div>
+            <div class="form-group">
+                <label for="month">月</label>
+                <input type="text" class="form-control" id="month" name="month" value="<%= content.month %>">
+            </div>
+            <div class="form-group">
+                <label for="day">日</label>
+                <input type="text" class="form-control" id="day" name="day" value="<%= content.day %>">
+            </div>
+            <div class="form-group">
+                <label for="subject">教科</label>
+                <input type="text" class="form-control" id="subject" name="subject" value="<%= content.subject %>">
+            </div>
+            <div class="form-group">
+                <label for="content">内容</label>
+                <textarea class="form-control" id="content" name="content"><%= content.content %></textarea>
+            </div>
+            <input type="submit" value="更新" class="btn btn-primary">
+            <button type="button" class="btn btn-secondary" onclick="location.href='/content/'">戻る</button>
+        </form>
+    </div>
+</body>
+</html>
